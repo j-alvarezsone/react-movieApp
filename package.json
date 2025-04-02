@@ -11,9 +11,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tailwindcss/vite": "^4.1.1",
+    "@tanstack/react-query": "^5.71.1",
     "axios": "^1.8.4",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "tailwindcss": "^4.1.1"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.11.0",

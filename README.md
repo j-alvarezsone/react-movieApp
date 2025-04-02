@@ -52,4 +52,5 @@ export default tseslint.config({
   },
 });
 ```
+
 # react-movieApp
