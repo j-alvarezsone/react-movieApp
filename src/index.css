@@ -12,6 +12,10 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
+  body {
+    @apply min-h-screen scroll-smooth;
+  }
+
   #root {
     @apply h-dvh lg:h-screen;
   }
