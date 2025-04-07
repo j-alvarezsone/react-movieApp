@@ -1,10 +1,30 @@
+import { useState } from "react";
+
+import Search from "./components/Search";
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState("");
+
   return (
-    <div className="flex flex-col items-center justify-center h-full">
-      <h1 className="text-3xl font-bold text-center">
-        Vite + React + Tailwind CSS + TypeScript
-      </h1>
-    </div>
+    <main className="flex flex-col items-center justify-center h-full">
+      <div className="pattern" />
+
+      <div className="wrapper">
+        <header>
+          <img
+            src="./hero.png"
+            alt="Hero Banner"
+          />
+          <h1>
+            Find
+            <span className="text-gradient">Movie</span>
+            You'll Enjoy Without the Hassle
+          </h1>
+        </header>
+
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      </div>
+    </main>
   );
 }
 
