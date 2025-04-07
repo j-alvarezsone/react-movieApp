@@ -1,12 +1,12 @@
 import axios from "axios";
 
-const apiKey = import.meta.env.VITE_API_KEY;
-const baseURL = import.meta.env.VITE_BASE_URL;
+const API_KEY = import.meta.env.VITE_API_KEY;
+const BASE_URL = import.meta.env.VITE_BASE_URL;
 
 const tmdbApi = axios.create({
-  baseURL,
+  baseURL: BASE_URL,
   params: {
-    api_key: apiKey,
+    api_key: API_KEY,
   },
   headers: {
     accept: "application/json",
