@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 
-import { discoverMovies } from "./api/movies/discover";
+import { fetchMovies } from "./api/movies";
 import MovieCard from "./components/MovieCard";
 import Search from "./components/Search";
 import Spinner from "./components/Spinner";
@@ -11,11 +11,9 @@ function App() {
 
   const { data: movie, isLoading, error } = useQuery({
     queryKey: ["movies", searchTerm],
-    queryFn: discoverMovies,
+    queryFn: () => fetchMovies(searchTerm),
     retry: false,
   });
-
-  ;
 
   return (
     <main className="flex flex-col items-center justify-center h-full">
