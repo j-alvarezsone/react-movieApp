@@ -16,7 +16,7 @@ export type Result = {
   overview: string;
   popularity: number;
   poster_path: string;
-  release_date: Date;
+  release_date: string;
   title: string;
   video: boolean;
   vote_average: number;
@@ -24,6 +24,6 @@ export type Result = {
 };
 
 type DateRange = {
-  minimum: Date;
-  maximum: Date;
+  minimum: string;
+  maximum: string;
 };
