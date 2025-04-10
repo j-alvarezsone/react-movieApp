@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
+import { useDebounce } from "react-use";
 
 import { fetchMovies } from "./api/movies";
 import MovieCard from "./components/MovieCard";
@@ -8,10 +9,15 @@ import Spinner from "./components/Spinner";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [debouncedSearchTerm, setDebouncedSearchTerm] = useState("");
+
+  useDebounce(() => {
+    setDebouncedSearchTerm(searchTerm);
+  }, 500, [searchTerm]);
 
   const { data: movie, isLoading, error } = useQuery({
-    queryKey: ["movies", searchTerm],
-    queryFn: () => fetchMovies(searchTerm),
+    queryKey: ["movies", debouncedSearchTerm],
+    queryFn: () => fetchMovies(debouncedSearchTerm),
     retry: false,
   });
 
